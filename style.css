@@ -1,34 +1,105 @@
-.header {
-    display: block;
-    background: #c4c4c4;
-    max-width: 100%;
-    height: 80px;
+/* Меню */
+
+.header__menu {
+    text-align: right;
 }
+
+.header__menu__links-item {
+    display: inline-block;
+    color: #333333;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header__menu-icon {
+    display: none;
+    width: 45px;
+    height: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+.header__menu-icon span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: #333333;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.header__menu-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.header__menu-icon span:nth-child(2),
+.header__menu-icon span:nth-child(3) {
+    top: 13px;
+}
+
+.header__menu-icon span:nth-child(4) {
+    top: 26px;
+}
+
+
+
+/* Контент страницы */
 
 .main {
     display: block;
     max-width: 100%;
-    height: 800px;
-}
-.footer {
-    display: block;
-    background: #c4c4c4;
-    max-width: 100%;
-    height: 80px;
+    height: 500px;
 }
 
 .content__text {
     font-size: 10px;
+    margin-top: 200px;
 }
 
 
 
-@media (min-width:320px) { 
+
+/* Медиа-запросы */
+
+@media (max-width:480px) { 
     /* smartphones, iPhone, portrait 480x320 phones */ 
     .content__text {
         font-size: 12px;
     }
+
+    .header__menu-icon {
+        display: inline-block;
+    }
+
+    .header__menu__links {
+        position: fixed;
+        display: block;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin-top: 52px;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        overflow: auto;
+          
+    }
+
+    .header__menu__links-item {
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+        color: #ffffff;
+    }
+
 }
+
 
 
 @media (min-width:481px) {
